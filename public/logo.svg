@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs></defs>
+  <rect width="400" height="400" rx="20" fill="#17181b"></rect>
+  <g transform="translate(200,150)">
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#33e28a" stroke-width="3"></circle>
+    <circle cx="-10" cy="-10" r="6" fill="#33e28a"></circle>
+    <circle cx="2" cy="-14" r="6" fill="#33e28a"></circle>
+    <circle cx="13" cy="-6" r="6" fill="#33e28a"></circle>
+    <circle cx="-12" cy="4" r="6" fill="#33e28a"></circle>
+    <circle cx="0" cy="2" r="6" fill="#33e28a"></circle>
+    <circle cx="12" cy="8" r="6" fill="#33e28a"></circle>
+    <circle cx="-6" cy="14" r="6" fill="#33e28a"></circle>
+    <circle cx="8" cy="16" r="6" fill="#33e28a"></circle></g>
+  <text x="200" y="250" class="word" font-size="36" fill="#f2f3f5" text-anchor="middle">BREAKING PAR</text>
+  <text x="200" y="278" class="tag" font-size="13" fill="#83858c" text-anchor="middle">Mobile Golf Lounge</text>
+</svg>
