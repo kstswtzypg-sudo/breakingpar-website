@@ -61,7 +61,7 @@ export default function Contact() {
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-400/10 text-brand-400">
                 <MapPin size={20} />
               </span>
-              Proudly serving events nationwide
+              Proudly serving Spokane, WA &amp; Coeur d'Alene, ID and surrounding communities
             </div>
           </div>
         </Reveal>

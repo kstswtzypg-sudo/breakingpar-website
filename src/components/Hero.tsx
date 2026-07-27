@@ -1,13 +1,7 @@
 import { ArrowRight, PlayCircle } from 'lucide-react'
 import Container from './ui/Container'
 import Button from './ui/Button'
-
-const stats: [string, string][] = [
-  ['200+', 'Events Hosted'],
-  ['50+', 'World Courses'],
-  ['5-Star', 'Average Rating'],
-  ['Nationwide', 'Delivery'],
-]
+import logo from '../assets/logo.svg'
 
 export default function Hero() {
   return (
@@ -24,50 +18,48 @@ export default function Hero() {
       </div>
 
       <Container className="flex flex-col items-center gap-8 text-center">
+        <img
+          src={logo}
+          alt="Breaking Par"
+          className="h-24 w-24 animate-fade-up rounded-2xl opacity-0 shadow-glow sm:h-32 sm:w-32"
+          width={128}
+          height={128}
+        />
+
         <span
           className="animate-fade-up rounded-full border border-ink-600 bg-ink-800/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 opacity-0"
+          style={{ animationDelay: '40ms' }}
         >
-          Mobile Golf Simulator Rentals
+          Mobile Golf Simulator Rentals — Spokane &amp; Coeur d'Alene
         </span>
 
         <h1
           className="animate-fade-up font-display text-4xl font-bold leading-[1.05] text-paper opacity-0 sm:text-6xl lg:text-7xl"
-          style={{ animationDelay: '80ms' }}
+          style={{ animationDelay: '120ms' }}
         >
-          The Course Comes <span className="text-brand-400">To You</span>
+          Premium Mobile Golf Simulator Rentals for <span className="text-brand-400">Spokane &amp; Coeur d'Alene</span>{' '}
+          Events
         </h1>
 
         <p
           className="max-w-2xl animate-fade-up text-lg text-mist opacity-0 sm:text-xl"
-          style={{ animationDelay: '160ms' }}
+          style={{ animationDelay: '200ms' }}
         >
-          Breaking Par delivers premium, tour-grade golf simulators to corporate events, weddings, trade shows,
-          and private parties — anywhere you're hosting, rain or shine.
+          Bring a professional golf simulator experience directly to your corporate event, private party,
+          fundraiser, wedding, tournament, or special event.
         </p>
 
         <div
           className="flex animate-fade-up flex-col gap-4 opacity-0 sm:flex-row"
-          style={{ animationDelay: '240ms' }}
+          style={{ animationDelay: '280ms' }}
         >
-          <Button href="#contact" variant="primary">
-            Get a Free Quote <ArrowRight size={18} />
+          <Button href="/pricing" variant="primary">
+            View Pricing <ArrowRight size={18} />
           </Button>
           <Button href="#how-it-works" variant="secondary">
             <PlayCircle size={18} /> See How It Works
           </Button>
         </div>
-
-        <dl
-          className="grid animate-fade-up grid-cols-2 gap-8 pt-10 opacity-0 sm:grid-cols-4"
-          style={{ animationDelay: '320ms' }}
-        >
-          {stats.map(([value, label]) => (
-            <div key={label} className="flex flex-col items-center gap-1">
-              <dt className="font-display text-2xl font-semibold text-paper sm:text-3xl">{value}</dt>
-              <dd className="text-xs uppercase tracking-wide text-mist">{label}</dd>
-            </div>
-          ))}
-        </dl>
       </Container>
     </section>
   )

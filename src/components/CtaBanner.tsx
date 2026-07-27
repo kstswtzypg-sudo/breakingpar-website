@@ -19,7 +19,7 @@ export default function CtaBanner() {
                 within one business day.
               </p>
               <Button href="#contact" variant="primary">
-                Get a Free Quote <ArrowRight size={18} />
+                Book Your Event <ArrowRight size={18} />
               </Button>
             </div>
           </div>

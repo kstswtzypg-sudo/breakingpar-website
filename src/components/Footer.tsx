@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Linkedin, Youtube } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 import Container from './ui/Container'
 import logo from '../assets/logo.svg'
 
@@ -10,12 +11,13 @@ const columns = [
       { label: 'Events We Cover', href: '#events' },
       { label: 'Features', href: '#features' },
       { label: 'Gallery', href: '#gallery' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
     title: 'Get Started',
     links: [
-      { label: 'Request a Quote', href: '#contact' },
+      { label: 'View Pricing', href: '/pricing' },
       { label: 'Testimonials', href: '#testimonials' },
     ],
   },
@@ -29,18 +31,21 @@ const socials = [
 ]
 
 export default function Footer() {
+  const location = useLocation()
+  const onHome = location.pathname === '/'
+
   return (
     <footer className="border-t border-ink-800 bg-ink-900 py-16">
       <Container className="flex flex-col gap-12">
         <div className="grid gap-12 lg:grid-cols-[2fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Breaking Par" className="h-10 w-10 rounded-lg" width={40} height={40} />
-              <span className="font-display text-lg font-semibold text-paper">BREAKING PAR</span>
+              <img src={logo} alt="Breaking Par" className="h-12 w-12 rounded-xl sm:h-14 sm:w-14" width={56} height={56} />
+              <span className="font-display text-lg font-semibold text-paper sm:text-xl">BREAKING PAR</span>
             </div>
             <p className="max-w-sm text-sm text-mist">
               Mobile golf simulator rentals bringing a premium, tour-grade golf experience directly to your
-              corporate event, wedding, trade show, or private party.
+              corporate event, wedding, trade show, or private party across Spokane, WA and Coeur d'Alene, ID.
             </p>
             <div className="flex gap-3">
               {socials.map((social) => (
@@ -62,7 +67,10 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} className="text-sm text-mist transition-colors hover:text-paper">
+                    <a
+                      href={!onHome && link.href.startsWith('#') ? `/${link.href}` : link.href}
+                      className="text-sm text-mist transition-colors hover:text-paper"
+                    >
                       {link.label}
                     </a>
                   </li>

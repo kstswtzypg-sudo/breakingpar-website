@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
 import Container from './ui/Container'
 import Button from './ui/Button'
 import logo from '../assets/logo.svg'
@@ -16,6 +17,8 @@ const links = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const onHome = location.pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -31,16 +34,18 @@ export default function Header() {
       }`}
     >
       <Container className="flex h-20 items-center justify-between">
-        <a href="#top" className="flex items-center gap-3">
-          <img src={logo} alt="Breaking Par" className="h-10 w-10 rounded-lg" width={40} height={40} />
-          <span className="font-display text-lg font-semibold tracking-wide text-paper">BREAKING PAR</span>
+        <a href={onHome ? '#top' : '/'} className="flex items-center gap-3">
+          <img src={logo} alt="Breaking Par" className="h-12 w-12 rounded-xl sm:h-14 sm:w-14" width={56} height={56} />
+          <span className="font-display text-lg font-semibold tracking-wide text-paper sm:text-xl">
+            BREAKING PAR
+          </span>
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={onHome ? link.href : `/${link.href}`}
               className="text-sm font-medium text-mist transition-colors hover:text-paper"
             >
               {link.label}
@@ -49,8 +54,8 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#contact" variant="primary">
-            Get a Quote
+          <Button href="/pricing" variant="primary">
+            Pricing
           </Button>
         </div>
 
@@ -71,15 +76,15 @@ export default function Header() {
             {links.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={onHome ? link.href : `/${link.href}`}
                 className="rounded-lg px-3 py-3 text-sm font-medium text-mist transition-colors hover:bg-ink-800 hover:text-paper"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button href="#contact" variant="primary" className="mt-2 w-full" onClick={() => setOpen(false)}>
-              Get a Quote
+            <Button href="/pricing" variant="primary" className="mt-2 w-full" onClick={() => setOpen(false)}>
+              Pricing
             </Button>
           </Container>
         </div>
