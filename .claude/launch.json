@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "breaking-par-dev",
+      "runtimeExecutable": "/Users/coco/Desktop/CODE/website code/.claude/dev-server.sh",
+      "runtimeArgs": [],
+      "port": 5173
+    }
+  ]
+}

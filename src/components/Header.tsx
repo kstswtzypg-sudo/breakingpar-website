@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 import Container from './ui/Container'
 import Button from './ui/Button'
-import logo from '../assets/logo.svg'
+import logo from '../assets/logo-mark.svg'
 
 const links = [
   { label: 'How It Works', href: '#how-it-works' },
